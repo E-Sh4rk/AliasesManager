@@ -130,6 +130,8 @@
             // 
             this.console.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.console.AutoSize = true;
+            this.console.Checked = true;
+            this.console.CheckState = System.Windows.Forms.CheckState.Checked;
             this.console.Location = new System.Drawing.Point(277, 126);
             this.console.Name = "console";
             this.console.Size = new System.Drawing.Size(64, 17);
@@ -175,7 +177,7 @@
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(92, 178);
             this.label5.Name = "label5";
