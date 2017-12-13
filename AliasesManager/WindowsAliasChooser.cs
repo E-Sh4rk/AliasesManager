@@ -53,7 +53,7 @@ namespace AliasesManager
         }
         public string Args
         {
-            get { return String.IsNullOrEmpty(args.Text) ? null : args.Text; }
+            get { return String.IsNullOrEmpty(args.Text) ? "" : args.Text; }
         }
         public string WorkingDir
         {

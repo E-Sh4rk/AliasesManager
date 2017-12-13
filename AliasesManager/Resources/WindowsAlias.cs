@@ -13,16 +13,13 @@ namespace TestPipe
         const string working_dir = [WORKING_DIR];
         static void Main(string[] args)
         {
-            string args_str = "";
-
-            foreach (string arg in args)
-            {
-                if (!String.IsNullOrEmpty(args_str))
-                    args_str += " ";
-                args_str += quoteParam(arg);
-            }
-            if (args_pattern != null)
-                args_str = Environment.ExpandEnvironmentVariables(args_pattern.Replace("%ARGS%", args_str).Replace("%QARGS%", quoteParam(args_str)));
+            string args_str = Environment.CommandLine;
+            // TODO : If this filename location contains a space...
+            if (args_str.IndexOf(" ") < 0)
+                args_str = "";
+            else
+                args_str = args_str.Substring(args_str.IndexOf(" ") + 1);
+            args_str = Environment.ExpandEnvironmentVariables(args_pattern.Replace("%ARGS%", args_str));
 
             Process p = new Process();
             p.StartInfo.FileName = Environment.ExpandEnvironmentVariables(command);
@@ -35,10 +32,6 @@ namespace TestPipe
                 p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             p.Start();
             p.WaitForExit();
-        }
-        static string quoteParam(string param)
-        {
-            return "\"" + param.Replace("\"", "\"\"\"") + "\"";
         }
     }
 }

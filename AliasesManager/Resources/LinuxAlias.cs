@@ -11,7 +11,6 @@ namespace TestPipe
         static void Main(string[] args)
         {
             string args_str = Environment.CommandLine;
-
             string cmd = change_command;
             if (cmd == null)
                 cmd = "\"" + Path.GetFileNameWithoutExtension(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\"";
@@ -42,7 +41,7 @@ namespace TestPipe
         }
         static string quoteParam(string param)
         {
-            return "\"" + param.Replace("\"", "\"\"\"") + "\"";
+            return "\"" + param.Replace("\\", "\\\\").Replace("\"", "\\\"") + "\"";
         }
     }
 }

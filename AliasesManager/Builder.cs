@@ -95,7 +95,7 @@ namespace AliasesManager
                 parameters.ReferencedAssemblies.Add("System.dll");
 
                 string code = Properties.Resources.WindowsAlias;
-                if (wa.command == null)
+                if (wa.command == null || wa.args_pattern == null)
                     throw new Exception();
                 code = code.Replace("[COMMAND]", CodeOfStr(wa.command));
                 code = code.Replace("[HIDDEN]", CodeOfBool(wa.hidden));
