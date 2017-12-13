@@ -46,6 +46,7 @@
             this.alias = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.command = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.profile = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.convert_args = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.reloadPath = new System.Windows.Forms.Button();
@@ -66,7 +67,6 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.convert_args = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -216,6 +216,11 @@
             this.profile.Text = "Load Profile";
             this.profile.Width = 73;
             // 
+            // convert_args
+            // 
+            this.convert_args.Text = "Convert args";
+            this.convert_args.Width = 73;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.label1);
@@ -303,7 +308,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(218, 39);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Aliases Manager 1.1\r\nCredits: Mickael Laurent\r\nhttps://github.com/E-Sh4rk/Aliases" +
+            this.label2.Text = "Aliases Manager 1.2\r\nCredits: Mickael Laurent\r\nhttps://github.com/E-Sh4rk/Aliases" +
     "Manager";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -394,11 +399,6 @@
             this.toolStripMenuItem4.Size = new System.Drawing.Size(107, 22);
             this.toolStripMenuItem4.Text = "Delete";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.deleteToolStripMenuItem2_Click);
-            // 
-            // convert_args
-            // 
-            this.convert_args.Text = "Convert args";
-            this.convert_args.Width = 73;
             // 
             // Form1
             // 

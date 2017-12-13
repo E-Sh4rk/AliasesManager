@@ -123,6 +123,7 @@
             // 
             // convertArgs
             // 
+            this.convertArgs.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.convertArgs.AutoSize = true;
             this.convertArgs.Location = new System.Drawing.Point(212, 128);
             this.convertArgs.Name = "convertArgs";
