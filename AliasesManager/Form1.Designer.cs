@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.windowsListView = new System.Windows.Forms.ListView();
@@ -300,7 +301,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(218, 39);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Aliases Manager 1.0\r\nCredits: Mickael Laurent\r\nhttps://github.com/E-Sh4rk/Aliases" +
+            this.label2.Text = "Aliases Manager 1.1\r\nCredits: Mickael Laurent\r\nhttps://github.com/E-Sh4rk/Aliases" +
     "Manager";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -398,8 +399,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(597, 384);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Aliases Manager 1.1";
+            this.Text = "Aliases Manager";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
