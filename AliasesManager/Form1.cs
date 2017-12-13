@@ -79,7 +79,7 @@ namespace AliasesManager
             string[] files = Directory.GetFiles(aliases_location);
             foreach (string file in files)
             {
-                if (!hs.Contains(file))
+                if (!hs.Contains(_normalizeAliasName(Path.GetFileName(file))))
                 {
                     try { File.Delete(file); } catch { }
                 }
