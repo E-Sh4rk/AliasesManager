@@ -246,6 +246,14 @@ namespace AliasesManager
             if (la != null && la.enabled != (e.NewValue == CheckState.Checked))
             {
                 la.enabled = (e.NewValue == CheckState.Checked);
+
+                if (e.NewValue == CheckState.Unchecked)
+                {
+                    // We must delete the alias involved, however it will not be updated
+                    string filename = Path.Combine(aliases_location, _normalizeAliasName(la.name));
+                    try { File.Delete(filename); } catch { }
+                }
+
                 _saveConfig();
                 _updateAliases();
             }
@@ -348,6 +356,14 @@ namespace AliasesManager
             if (wa != null && wa.enabled != (e.NewValue == CheckState.Checked))
             {
                 wa.enabled = (e.NewValue == CheckState.Checked);
+
+                if (e.NewValue == CheckState.Unchecked)
+                {
+                    // We must delete the alias involved, however it will not be updated
+                    string filename = Path.Combine(aliases_location, _normalizeAliasName(wa.name));
+                    try { File.Delete(filename); } catch { }
+                }
+
                 _saveConfig();
                 _updateAliases();
             }
