@@ -14,11 +14,7 @@ namespace TestPipe
         static void Main(string[] args)
         {
             string args_str = Environment.CommandLine;
-            // TODO : If this filename location contains a space...
-            if (args_str.IndexOf(" ") < 0)
-                args_str = "";
-            else
-                args_str = args_str.Substring(args_str.IndexOf(" ") + 1);
+            args_str = args_str.Substring(nextArg(args_str));
             args_str = Environment.ExpandEnvironmentVariables(args_pattern.Replace("%ARGS%", args_str));
 
             Process p = new Process();
@@ -32,6 +28,29 @@ namespace TestPipe
                 p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             p.Start();
             p.WaitForExit();
+        }
+        static int firstNonSpace(string str)
+        {
+            int i = 0;
+            while (i < str.Length && str[i] == ' ') i++;
+            return i;
+        }
+        static int nextArg(string str)
+        {
+            int i = firstNonSpace(str);
+            bool quote = false;
+            while (i < str.Length)
+            {
+                if (str[i] == '"')
+                    quote = !quote;
+                else if (str[i] == ' ' && !quote)
+                {
+                    i++;
+                    break;
+                }
+                i++;
+            }
+            return i;
         }
     }
 }

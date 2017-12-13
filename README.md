@@ -6,4 +6,4 @@ Soon, a tutorial...
 
 ## Issues / TODO
 
-  * Support the case when the alias filename contains a space in its path.
+  * Admin windows alias feature

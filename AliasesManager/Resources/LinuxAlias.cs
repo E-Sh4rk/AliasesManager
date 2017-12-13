@@ -14,11 +14,7 @@ namespace TestPipe
             string cmd = change_command;
             if (cmd == null)
                 cmd = "\"" + Path.GetFileNameWithoutExtension(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\"";
-            // TODO : If this filename location contains a space...
-            if (args_str.IndexOf(" ") < 0)
-                args_str = "";
-            else
-                args_str = args_str.Substring(args_str.IndexOf(" ") + 1);
+            args_str = args_str.Substring(nextArg(args_str));
             args_str = cmd + " " + args_str;
 
             Process p = new Process();
@@ -42,6 +38,29 @@ namespace TestPipe
         static string quoteParam(string param)
         {
             return "\"" + param.Replace("\\", "\\\\").Replace("\"", "\\\"") + "\"";
+        }
+        static int firstNonSpace(string str)
+        {
+            int i = 0;
+            while (i < str.Length && str[i] == ' ') i++;
+            return i;
+        }
+        static int nextArg(string str)
+        {
+            int i = firstNonSpace(str);
+            bool quote = false;
+            while (i < str.Length)
+            {
+                if (str[i] == '"')
+                    quote = !quote;
+                else if (str[i] == ' ' && !quote)
+                {
+                    i++;
+                    break;
+                }
+                i++;
+            }
+            return i;
         }
     }
 }

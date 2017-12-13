@@ -50,6 +50,8 @@
             this.savePathUser = new System.Windows.Forms.Button();
             this.addAliasesLocation = new System.Windows.Forms.Button();
             this.pathVariable = new System.Windows.Forms.TextBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
             this.linuxCompleteContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.newToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,17 +64,15 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.linuxCompleteContextStrip.SuspendLayout();
             this.linuxContextStrip.SuspendLayout();
             this.windowsContextStrip.SuspendLayout();
             this.windowsCompleteContextStrip.SuspendLayout();
-            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -127,17 +127,17 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Alias";
-            this.columnHeader1.Width = 79;
+            this.columnHeader1.Width = 103;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Command";
-            this.columnHeader2.Width = 100;
+            this.columnHeader2.Width = 89;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Arguments";
-            this.columnHeader3.Width = 96;
+            this.columnHeader3.Width = 112;
             // 
             // columnHeader4
             // 
@@ -194,12 +194,12 @@
             // alias
             // 
             this.alias.Text = "Alias";
-            this.alias.Width = 132;
+            this.alias.Width = 150;
             // 
             // command
             // 
             this.command.Text = "Command (if different)";
-            this.command.Width = 260;
+            this.command.Width = 187;
             // 
             // profile
             // 
@@ -273,6 +273,29 @@
             this.pathVariable.Name = "pathVariable";
             this.pathVariable.Size = new System.Drawing.Size(527, 210);
             this.pathVariable.TabIndex = 0;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.label2);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(589, 358);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "About";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(181, 154);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(218, 39);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Aliases Manager 1.0\r\nCredits: Mickael Laurent\r\nhttps://github.com/E-Sh4rk/Aliases" +
+    "Manager";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // linuxCompleteContextStrip
             // 
@@ -362,29 +385,6 @@
             this.toolStripMenuItem4.Text = "Delete";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.deleteToolStripMenuItem2_Click);
             // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.label2);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(589, 358);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "About";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(181, 154);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(218, 39);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Aliases Manager 1.0\r\nCredits: Mickael Laurent\r\nhttps://github.com/E-Sh4rk/Aliases" +
-    "Manager";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,12 +398,12 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.linuxCompleteContextStrip.ResumeLayout(false);
             this.linuxContextStrip.ResumeLayout(false);
             this.windowsContextStrip.ResumeLayout(false);
             this.windowsCompleteContextStrip.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
 
         }
