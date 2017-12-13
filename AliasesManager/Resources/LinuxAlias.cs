@@ -8,13 +8,16 @@ namespace TestPipe
     {
         const string change_command = [CHANGE_COMMAND];
         const bool load_profile = [LOAD_PROFILE];
+        const bool convert_args = [CONVERT_ARGS];
         static void Main(string[] args)
         {
-            string args_str = Environment.CommandLine;
             string cmd = change_command;
             if (cmd == null)
                 cmd = "\"" + Path.GetFileNameWithoutExtension(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\"";
+            string args_str = Environment.CommandLine;
             args_str = args_str.Substring(nextArg(args_str));
+            if (convert_args)
+                args_str = args_str.Replace("\\", "/");
             args_str = cmd + " " + args_str;
 
             Process p = new Process();

@@ -66,6 +66,7 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.convert_args = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -135,17 +136,17 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Command";
-            this.columnHeader2.Width = 89;
+            this.columnHeader2.Width = 92;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Arguments";
-            this.columnHeader3.Width = 103;
+            this.columnHeader3.Width = 92;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Working dir";
-            this.columnHeader4.Width = 92;
+            this.columnHeader4.Width = 83;
             // 
             // columnHeader5
             // 
@@ -184,7 +185,8 @@
             this.linuxListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.alias,
             this.command,
-            this.profile});
+            this.profile,
+            this.convert_args});
             this.linuxListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.linuxListView.FullRowSelect = true;
             this.linuxListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -202,17 +204,17 @@
             // alias
             // 
             this.alias.Text = "Alias";
-            this.alias.Width = 150;
+            this.alias.Width = 181;
             // 
             // command
             // 
             this.command.Text = "Command (if different)";
-            this.command.Width = 187;
+            this.command.Width = 197;
             // 
             // profile
             // 
             this.profile.Text = "Load Profile";
-            this.profile.Width = 115;
+            this.profile.Width = 73;
             // 
             // tabPage3
             // 
@@ -393,6 +395,11 @@
             this.toolStripMenuItem4.Text = "Delete";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.deleteToolStripMenuItem2_Click);
             // 
+            // convert_args
+            // 
+            this.convert_args.Text = "Convert args";
+            this.convert_args.Width = 73;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -455,6 +462,7 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader convert_args;
     }
 }
 

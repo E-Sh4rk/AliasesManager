@@ -27,6 +27,7 @@ namespace AliasesManager
             public string name;
             public bool load_profile;
             public string modified_command;
+            public bool convert_args;
         }
         public List<WindowsAlias> windows_aliases = new List<WindowsAlias>();
         public List<LinuxAlias> linux_aliases = new List<LinuxAlias>();

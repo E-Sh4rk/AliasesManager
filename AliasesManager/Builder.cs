@@ -57,6 +57,7 @@ namespace AliasesManager
                 string code = Properties.Resources.LinuxAlias;
                 code = code.Replace("[CHANGE_COMMAND]", CodeOfStr(la.modified_command));
                 code = code.Replace("[LOAD_PROFILE]", CodeOfBool(la.load_profile));
+                code = code.Replace("[CONVERT_ARGS]", CodeOfBool(la.convert_args));
 
                 CSharpCodeProvider provider = new CSharpCodeProvider(new Dictionary<string, string> { { "CompilerVersion", "v4.0" } });
                 CompilerResults compiler = provider.CompileAssemblyFromSource(parameters, code);
