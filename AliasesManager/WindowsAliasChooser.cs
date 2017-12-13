@@ -26,6 +26,7 @@ namespace AliasesManager
                 hidden.Checked = wa.hidden;
                 createNoWindow.Checked = wa.create_no_window;
                 console.Checked = wa.open_console;
+                admin.Checked = wa.admin;
                 args.Text = wa.args_pattern == null ? "" : wa.args_pattern;
                 workingDir.Text = wa.working_dir == null ? "" : wa.working_dir;
             }
@@ -50,6 +51,10 @@ namespace AliasesManager
         public bool Console
         {
             get { return console.Checked; }
+        }
+        public bool Admin
+        {
+            get { return admin.Checked; }
         }
         public string Args
         {

@@ -67,6 +67,25 @@ namespace AliasesManager.Properties {
         ///  &lt;trustInfo xmlns=&quot;urn:schemas-microsoft-com:asm.v2&quot;&gt;
         ///    &lt;security&gt;
         ///      &lt;requestedPrivileges xmlns=&quot;urn:schemas-microsoft-com:asm.v3&quot;&gt;
+        ///        &lt;requestedExecutionLevel level=&quot;requireAdministrator&quot; uiAccess=&quot;false&quot;/&gt;
+        ///      &lt;/requestedPrivileges&gt;
+        ///    &lt;/security&gt;
+        ///  &lt;/trustInfo&gt;
+        ///&lt;/assembly&gt;.
+        /// </summary>
+        internal static string AdminManifest {
+            get {
+                return ResourceManager.GetString("AdminManifest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+        ///&lt;assembly xmlns=&quot;urn:schemas-microsoft-com:asm.v1&quot; manifestVersion=&quot;1.0&quot;&gt;
+        ///  &lt;assemblyIdentity version=&quot;1.0.0.0&quot; name=&quot;MyApplication.app&quot;/&gt;
+        ///  &lt;trustInfo xmlns=&quot;urn:schemas-microsoft-com:asm.v2&quot;&gt;
+        ///    &lt;security&gt;
+        ///      &lt;requestedPrivileges xmlns=&quot;urn:schemas-microsoft-com:asm.v3&quot;&gt;
         ///        &lt;requestedExecutionLevel level=&quot;asInvoker&quot; uiAccess=&quot;false&quot;/&gt;
         ///      &lt;/requestedPrivileges&gt;
         ///    &lt;/security&gt;
@@ -82,7 +101,7 @@ namespace AliasesManager.Properties {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à using System;
         ///using System.Diagnostics;
-        /////using System.IO;
+        ///using System.IO;
         ///
         ///namespace TestPipe
         ///{
@@ -93,13 +112,9 @@ namespace AliasesManager.Properties {
         ///        static void Main(string[] args)
         ///        {
         ///            string args_str = Environment.CommandLine;
-        ///
-        ///            if (change_command != null)
-        ///            {
-        ///                if (args_str.IndexOf(&quot; &quot;) &lt; 0)
-        ///                    args_str = &quot;&quot;;
-        ///                else
-        ///                    [le reste de la chaîne a été tronqué]&quot;;.
+        ///            string cmd = change_command;
+        ///            if (cmd == null)
+        ///                cmd = &quot;\&quot;&quot; + Path.GetFileNameWithoutExtension(System.Reflection.Assembly.GetExecutingAssembly().L [le reste de la chaîne a été tronqué]&quot;;.
         /// </summary>
         internal static string LinuxAlias {
             get {
@@ -123,11 +138,8 @@ namespace AliasesManager.Properties {
         ///        const string working_dir = [WORKING_DIR];
         ///        static void Main(string[] args)
         ///        {
-        ///            string args_str = &quot;&quot;;
-        ///
-        ///            foreach (string arg in args)
-        ///            {
-        ///         [le reste de la chaîne a été tronqué]&quot;;.
+        ///            string args_str = Environment.CommandLine;
+        ///            args_str = args_str.Substring(next [le reste de la chaîne a été tronqué]&quot;;.
         /// </summary>
         internal static string WindowsAlias {
             get {

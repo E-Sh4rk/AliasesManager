@@ -78,7 +78,10 @@ namespace AliasesManager
                 string exe_path = Path.Combine(temp_dir, "alias.exe");
                 string manifest_path = Path.Combine(temp_dir, "manifest.xml");
 
-                File.WriteAllText(manifest_path, Properties.Resources.LimitedManifest);
+                if (wa.admin)
+                    File.WriteAllText(manifest_path, Properties.Resources.AdminManifest);
+                else
+                    File.WriteAllText(manifest_path, Properties.Resources.LimitedManifest);
                 CompilerParameters parameters = new CompilerParameters()
                 {
                     GenerateExecutable = true,

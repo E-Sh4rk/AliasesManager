@@ -39,6 +39,7 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.linuxListView = new System.Windows.Forms.ListView();
             this.alias = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -109,7 +110,8 @@
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6,
-            this.columnHeader7});
+            this.columnHeader7,
+            this.columnHeader8});
             this.windowsListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.windowsListView.FullRowSelect = true;
             this.windowsListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -137,7 +139,7 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Arguments";
-            this.columnHeader3.Width = 112;
+            this.columnHeader3.Width = 103;
             // 
             // columnHeader4
             // 
@@ -158,6 +160,11 @@
             // 
             this.columnHeader7.Text = "Console";
             this.columnHeader7.Width = 52;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Admin";
+            this.columnHeader8.Width = 43;
             // 
             // tabPage2
             // 
@@ -392,7 +399,7 @@
             this.ClientSize = new System.Drawing.Size(597, 384);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
-            this.Text = "Aliases Manager 1.0";
+            this.Text = "Aliases Manager 1.1";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -445,6 +452,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
     }
 }
 

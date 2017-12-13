@@ -18,6 +18,7 @@ namespace AliasesManager
             public string args_pattern;
             public string working_dir;
             public bool open_console;
+            public bool admin;
         }
         public class LinuxAlias
         {
