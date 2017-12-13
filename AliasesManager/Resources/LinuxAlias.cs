@@ -14,7 +14,7 @@ namespace TestPipe
 
             string cmd = change_command;
             if (cmd == null)
-                cmd = Path.GetFileNameWithoutExtension(System.Reflection.Assembly.GetExecutingAssembly().Location);
+                cmd = "\"" + Path.GetFileNameWithoutExtension(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\"";
             // TODO : If this filename location contains a space...
             if (args_str.IndexOf(" ") < 0)
                 args_str = "";

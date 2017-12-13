@@ -180,8 +180,8 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(292, 39);
             this.label5.TabIndex = 18;
-            this.label5.Text = "Alias must not contains any / or \\.\r\nYou can use environment variables\r\n(%ARGS% a" +
-    "nd %QARGS% ara also available for arguments).";
+            this.label5.Text = "Alias must not contains any / or \\ or \".\r\nYou can use environment variables\r\n(%AR" +
+    "GS% and %QARGS% ara also available for arguments).";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // WindowsAliasChooser

@@ -32,6 +32,13 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.windowsListView = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.linuxListView = new System.Windows.Forms.ListView();
             this.alias = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -49,19 +56,14 @@
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.linuxContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.windowsContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsCompleteContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -70,6 +72,7 @@
             this.linuxContextStrip.SuspendLayout();
             this.windowsContextStrip.SuspendLayout();
             this.windowsCompleteContextStrip.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -77,6 +80,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -119,6 +123,41 @@
             this.windowsListView.View = System.Windows.Forms.View.Details;
             this.windowsListView.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.windowsListView_ItemCheck);
             this.windowsListView.MouseUp += new System.Windows.Forms.MouseEventHandler(this.windowsListView_MouseUp);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Alias";
+            this.columnHeader1.Width = 79;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Command";
+            this.columnHeader2.Width = 100;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Arguments";
+            this.columnHeader3.Width = 96;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Working dir";
+            this.columnHeader4.Width = 92;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Hidden";
+            this.columnHeader5.Width = 49;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "CNW";
+            this.columnHeader6.Width = 45;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Console";
+            this.columnHeader7.Width = 52;
             // 
             // tabPage2
             // 
@@ -279,41 +318,6 @@
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Alias";
-            this.columnHeader1.Width = 79;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Command";
-            this.columnHeader2.Width = 100;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Arguments";
-            this.columnHeader3.Width = 96;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Working dir";
-            this.columnHeader4.Width = 92;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Hidden";
-            this.columnHeader5.Width = 49;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "CNW";
-            this.columnHeader6.Width = 45;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Console";
-            this.columnHeader7.Width = 52;
-            // 
             // windowsContextStrip
             // 
             this.windowsContextStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -340,23 +344,46 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(107, 22);
             this.toolStripMenuItem2.Text = "New";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.newToolStripMenuItem2_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(107, 22);
             this.toolStripMenuItem3.Text = "Edit";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.editToolStripMenuItem2_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(107, 22);
             this.toolStripMenuItem4.Text = "Delete";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.deleteToolStripMenuItem2_Click);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.label2);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(589, 358);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "About";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(181, 154);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(218, 39);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Aliases Manager 1.0\r\nCredits: Mickael Laurent\r\nhttps://github.com/E-Sh4rk/Aliases" +
+    "Manager";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -375,6 +402,8 @@
             this.linuxContextStrip.ResumeLayout(false);
             this.windowsContextStrip.ResumeLayout(false);
             this.windowsCompleteContextStrip.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -414,6 +443,8 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Label label2;
     }
 }
 

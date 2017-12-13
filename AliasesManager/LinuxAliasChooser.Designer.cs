@@ -116,9 +116,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(92, 86);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(166, 26);
+            this.label3.Size = new System.Drawing.Size(186, 26);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Alias must not contains any / or \\.\r\nCommand empty = Same as alias";
+            this.label3.Text = "Alias must not contains any / or \\ or \".\r\nCommand empty = Same as alias";
             // 
             // LinuxAliasChooser
             // 
