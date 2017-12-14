@@ -156,6 +156,7 @@
             this.args.Name = "args";
             this.args.Size = new System.Drawing.Size(247, 20);
             this.args.TabIndex = 14;
+            this.args.Text = "%ARGS%";
             // 
             // workingDir
             // 
