@@ -39,7 +39,7 @@ namespace TestPipe
                 return;
             p.StartInfo.Arguments = args_str;
             if (working_dir != null)
-                p.StartInfo.WorkingDirectory = Environment.ExpandEnvironmentVariables(working_dir);
+                p.StartInfo.WorkingDirectory = Environment.ExpandEnvironmentVariables(working_dir.Replace("\"", ""));
             else
                 p.StartInfo.WorkingDirectory = Environment.CurrentDirectory;
             p.StartInfo.CreateNoWindow = create_no_window;
