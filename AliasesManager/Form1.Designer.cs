@@ -67,6 +67,8 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.reconstructAliases = new System.Windows.Forms.Button();
+            this.resetData = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -291,6 +293,8 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.resetData);
+            this.tabPage4.Controls.Add(this.reconstructAliases);
             this.tabPage4.Controls.Add(this.label2);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
@@ -308,7 +312,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(218, 39);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Aliases Manager 1.3\r\nCredits: Mickael Laurent\r\nhttps://github.com/E-Sh4rk/Aliases" +
+            this.label2.Text = "Aliases Manager 1.4\r\nCredits: Mickael Laurent\r\nhttps://github.com/E-Sh4rk/Aliases" +
     "Manager";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -400,6 +404,28 @@
             this.toolStripMenuItem4.Text = "Delete";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.deleteToolStripMenuItem2_Click);
             // 
+            // reconstructAliases
+            // 
+            this.reconstructAliases.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.reconstructAliases.Location = new System.Drawing.Point(156, 220);
+            this.reconstructAliases.Name = "reconstructAliases";
+            this.reconstructAliases.Size = new System.Drawing.Size(126, 23);
+            this.reconstructAliases.TabIndex = 1;
+            this.reconstructAliases.Text = "Reconstruct aliases";
+            this.reconstructAliases.UseVisualStyleBackColor = true;
+            this.reconstructAliases.Click += new System.EventHandler(this.reconstructAliases_Click);
+            // 
+            // resetData
+            // 
+            this.resetData.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.resetData.Location = new System.Drawing.Point(300, 220);
+            this.resetData.Name = "resetData";
+            this.resetData.Size = new System.Drawing.Size(126, 23);
+            this.resetData.TabIndex = 2;
+            this.resetData.Text = "Reset all data";
+            this.resetData.UseVisualStyleBackColor = true;
+            this.resetData.Click += new System.EventHandler(this.resetData_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -463,6 +489,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader convert_args;
+        private System.Windows.Forms.Button resetData;
+        private System.Windows.Forms.Button reconstructAliases;
     }
 }
 

@@ -24,14 +24,19 @@ namespace AliasesManager
             data_location = Path.Combine(Environment.CurrentDirectory, "Data");
             aliases_location = Path.Combine(data_location, "Aliases");
             config_file = Path.Combine(data_location, "config.xml");
-            Directory.CreateDirectory(data_location);
-            Directory.CreateDirectory(aliases_location);
+
+            try
+            {
+                Directory.CreateDirectory(data_location);
+                Directory.CreateDirectory(aliases_location);
+            }
+            catch { }
 
             _reloadPath();
             _loadConfig();
         }
 
-        void _updateLists()
+        private void _updateLists()
         {
             windowsListView.Items.Clear();
             linuxListView.Items.Clear();
@@ -54,7 +59,7 @@ namespace AliasesManager
             }
         }
 
-        string _normalizeAliasName(string name)
+        private string _normalizeAliasName(string name)
         {
             name = name.ToLowerInvariant();
             if (String.Equals(Path.GetExtension(name), ".exe", StringComparison.OrdinalIgnoreCase))
@@ -62,7 +67,7 @@ namespace AliasesManager
             return name + ".exe";
         }
 
-        void _updateAliases()
+        private void _updateAliases()
         {
             // Deleting disabled/unknown aliases
             HashSet<string> hs = new HashSet<string>();
@@ -110,12 +115,12 @@ namespace AliasesManager
             }
         }
 
-        void _reloadPath()
+        private void _reloadPath()
         {
             pathVariable.Text = Environment.GetEnvironmentVariable("PATH", EnvironmentVariableTarget.User);
         }
 
-        void _loadConfig()
+        private void _loadConfig()
         {
             try
             {
@@ -134,13 +139,17 @@ namespace AliasesManager
             _updateAliases();
         }
 
-        void _saveConfig()
+        private void _saveConfig()
         {
-            using (TextWriter writer = new StreamWriter(config_file))
+            try
             {
-                XmlSerializer xml = new XmlSerializer(typeof(Config));
-                xml.Serialize(writer, cfg);
+                using (TextWriter writer = new StreamWriter(config_file))
+                {
+                    XmlSerializer xml = new XmlSerializer(typeof(Config));
+                    xml.Serialize(writer, cfg);
+                }
             }
+            catch { MessageBox.Show(this, "An error has occured while trying to save configuration...", "Error"); }
         }
 
         // ----- PATH handlers -----
@@ -366,6 +375,36 @@ namespace AliasesManager
 
                 _saveConfig();
                 _updateAliases();
+            }
+        }
+
+        // ----- About tab -----
+
+        private void _reconstructAliases()
+        {
+            try
+            {
+                Directory.Delete(aliases_location, true);
+                Directory.CreateDirectory(aliases_location);
+            }
+            catch { MessageBox.Show(this, "An error has occured. Maybe an alias is currently in use.", "Error"); }
+            _updateAliases();
+        }
+
+        private void reconstructAliases_Click(object sender, EventArgs e) { _reconstructAliases(); }
+
+        private void resetData_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(this, "Are you sure ?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    if (File.Exists(config_file))
+                        File.Delete(config_file);
+                    _loadConfig();
+                    _reconstructAliases();
+                }
+                catch { MessageBox.Show(this, "An error has occured.", "Error"); }
             }
         }
     }
