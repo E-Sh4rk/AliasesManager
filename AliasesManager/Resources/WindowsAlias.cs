@@ -13,15 +13,35 @@ namespace TestPipe
         const string working_dir = [WORKING_DIR];
         static void Main(string[] args)
         {
-            string args_str = Environment.CommandLine;
-            args_str = args_str.Substring(nextArg(args_str));
-            args_str = Environment.ExpandEnvironmentVariables(args_pattern.Replace("%ARGS%", args_str));
+            //Console.TreatControlCAsInput = true;
+            Console.CancelKeyPress += delegate (object sender, ConsoleCancelEventArgs e) {
+                e.Cancel = true;
+            };
+
+            string cmd = command;
+            string args_str = "";
+            if (args_pattern != null)
+            {
+                args_str = Environment.CommandLine;
+                args_str = args_str.Substring(nextArg(args_str));
+                args_str = Environment.ExpandEnvironmentVariables(args_pattern.Replace("%ARGS%", args_str));
+                if (cmd == null)
+                {
+                    cmd = args_str.Substring(0, nextArg(args_str));
+                    args_str = args_str.Substring(nextArg(args_str));
+                }
+            }
 
             Process p = new Process();
-            p.StartInfo.FileName = Environment.ExpandEnvironmentVariables(command);
+            if (cmd != null)
+                p.StartInfo.FileName = Environment.ExpandEnvironmentVariables(cmd.Replace("\"", ""));
+            else
+                return;
             p.StartInfo.Arguments = args_str;
             if (working_dir != null)
                 p.StartInfo.WorkingDirectory = Environment.ExpandEnvironmentVariables(working_dir);
+            else
+                p.StartInfo.WorkingDirectory = Environment.CurrentDirectory;
             p.StartInfo.CreateNoWindow = create_no_window;
             p.StartInfo.UseShellExecute = false;
             if (hidden)

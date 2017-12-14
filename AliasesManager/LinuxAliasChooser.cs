@@ -22,7 +22,7 @@ namespace AliasesManager
             if (la != null)
             {
                 name.Text = la.name;
-                command.Text = la.modified_command == null ? "" : la.modified_command;
+                command.Text = la.command == null ? "" : la.command;
                 loadProfile.Checked = la.load_profile;
                 convertArgs.Checked = la.convert_args;
             }

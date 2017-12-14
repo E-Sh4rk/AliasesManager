@@ -208,7 +208,7 @@
             // 
             // command
             // 
-            this.command.Text = "Command (if different)";
+            this.command.Text = "Command";
             this.command.Width = 197;
             // 
             // profile
@@ -308,7 +308,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(218, 39);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Aliases Manager 1.2\r\nCredits: Mickael Laurent\r\nhttps://github.com/E-Sh4rk/Aliases" +
+            this.label2.Text = "Aliases Manager 1.3\r\nCredits: Mickael Laurent\r\nhttps://github.com/E-Sh4rk/Aliases" +
     "Manager";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 

@@ -38,7 +38,7 @@ namespace AliasesManager
         }
         public string Command
         {
-            get { return String.IsNullOrEmpty(command.Text) ? "" : command.Text; }
+            get { return String.IsNullOrEmpty(command.Text) ? null : command.Text; }
         }
         public bool Hidden
         {
@@ -58,7 +58,7 @@ namespace AliasesManager
         }
         public string Args
         {
-            get { return String.IsNullOrEmpty(args.Text) ? "" : args.Text; }
+            get { return String.IsNullOrEmpty(args.Text) ? null : args.Text; }
         }
         public string WorkingDir
         {

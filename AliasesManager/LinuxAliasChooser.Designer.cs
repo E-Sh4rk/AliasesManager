@@ -64,7 +64,7 @@
             // 
             // name
             // 
-            this.name.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.name.Location = new System.Drawing.Point(85, 29);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(257, 20);
@@ -72,7 +72,7 @@
             // 
             // command
             // 
-            this.command.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.command.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.command.Location = new System.Drawing.Point(85, 55);
             this.command.Name = "command";
             this.command.Size = new System.Drawing.Size(257, 20);
@@ -80,7 +80,7 @@
             // 
             // loadProfile
             // 
-            this.loadProfile.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.loadProfile.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.loadProfile.AutoSize = true;
             this.loadProfile.Checked = true;
             this.loadProfile.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -113,17 +113,17 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(82, 78);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(186, 26);
+            this.label3.Size = new System.Drawing.Size(206, 26);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Alias must not contains any / or \\ or \".\r\nCommand empty = Same as alias";
+            this.label3.Text = "Alias must not contains any / or \\ or \".\r\nCommand empty = Determined by the args";
             // 
             // convertArgs
             // 
-            this.convertArgs.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.convertArgs.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.convertArgs.AutoSize = true;
             this.convertArgs.Location = new System.Drawing.Point(212, 128);
             this.convertArgs.Name = "convertArgs";

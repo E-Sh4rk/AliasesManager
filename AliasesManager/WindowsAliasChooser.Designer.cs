@@ -48,7 +48,7 @@
             // ok
             // 
             this.ok.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ok.Location = new System.Drawing.Point(264, 231);
+            this.ok.Location = new System.Drawing.Point(264, 252);
             this.ok.Name = "ok";
             this.ok.Size = new System.Drawing.Size(75, 23);
             this.ok.TabIndex = 3;
@@ -60,7 +60,7 @@
             // 
             this.cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancel.Location = new System.Drawing.Point(183, 231);
+            this.cancel.Location = new System.Drawing.Point(183, 252);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(75, 23);
             this.cancel.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 51);
+            this.label2.Location = new System.Drawing.Point(12, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 10;
@@ -82,7 +82,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 25);
+            this.label1.Location = new System.Drawing.Point(12, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 9;
@@ -90,25 +90,25 @@
             // 
             // command
             // 
-            this.command.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.command.Location = new System.Drawing.Point(94, 48);
+            this.command.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.command.Location = new System.Drawing.Point(92, 49);
             this.command.Name = "command";
             this.command.Size = new System.Drawing.Size(247, 20);
             this.command.TabIndex = 8;
             // 
             // name
             // 
-            this.name.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.name.Location = new System.Drawing.Point(94, 22);
+            this.name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.name.Location = new System.Drawing.Point(92, 23);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(247, 20);
             this.name.TabIndex = 7;
             // 
             // hidden
             // 
-            this.hidden.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.hidden.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.hidden.AutoSize = true;
-            this.hidden.Location = new System.Drawing.Point(95, 126);
+            this.hidden.Location = new System.Drawing.Point(93, 127);
             this.hidden.Name = "hidden";
             this.hidden.Size = new System.Drawing.Size(60, 17);
             this.hidden.TabIndex = 11;
@@ -117,9 +117,9 @@
             // 
             // createNoWindow
             // 
-            this.createNoWindow.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.createNoWindow.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.createNoWindow.AutoSize = true;
-            this.createNoWindow.Location = new System.Drawing.Point(161, 126);
+            this.createNoWindow.Location = new System.Drawing.Point(159, 127);
             this.createNoWindow.Name = "createNoWindow";
             this.createNoWindow.Size = new System.Drawing.Size(110, 17);
             this.createNoWindow.TabIndex = 12;
@@ -128,11 +128,11 @@
             // 
             // console
             // 
-            this.console.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.console.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.console.AutoSize = true;
             this.console.Checked = true;
             this.console.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.console.Location = new System.Drawing.Point(277, 126);
+            this.console.Location = new System.Drawing.Point(275, 127);
             this.console.Name = "console";
             this.console.Size = new System.Drawing.Size(64, 17);
             this.console.TabIndex = 13;
@@ -143,7 +143,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 77);
+            this.label3.Location = new System.Drawing.Point(12, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 15;
@@ -151,16 +151,16 @@
             // 
             // args
             // 
-            this.args.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.args.Location = new System.Drawing.Point(94, 74);
+            this.args.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.args.Location = new System.Drawing.Point(92, 75);
             this.args.Name = "args";
             this.args.Size = new System.Drawing.Size(247, 20);
             this.args.TabIndex = 14;
             // 
             // workingDir
             // 
-            this.workingDir.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.workingDir.Location = new System.Drawing.Point(94, 100);
+            this.workingDir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.workingDir.Location = new System.Drawing.Point(92, 101);
             this.workingDir.Name = "workingDir";
             this.workingDir.Size = new System.Drawing.Size(247, 20);
             this.workingDir.TabIndex = 16;
@@ -169,7 +169,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 103);
+            this.label4.Location = new System.Drawing.Point(13, 104);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 13);
             this.label4.TabIndex = 17;
@@ -177,20 +177,20 @@
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(92, 178);
+            this.label5.Location = new System.Drawing.Point(92, 179);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(206, 39);
+            this.label5.Size = new System.Drawing.Size(206, 52);
             this.label5.TabIndex = 18;
             this.label5.Text = "Alias must not contains any / or \\ or \".\r\nYou can use environment variables\r\n(%AR" +
-    "GS% is also available for arguments).";
+    "GS% is also available for arguments).\r\nFilename empty = Determined by the args";
             // 
             // admin
             // 
-            this.admin.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.admin.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.admin.AutoSize = true;
-            this.admin.Location = new System.Drawing.Point(95, 149);
+            this.admin.Location = new System.Drawing.Point(93, 150);
             this.admin.Name = "admin";
             this.admin.Size = new System.Drawing.Size(91, 17);
             this.admin.TabIndex = 19;
@@ -203,7 +203,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancel;
-            this.ClientSize = new System.Drawing.Size(351, 266);
+            this.ClientSize = new System.Drawing.Size(351, 287);
             this.Controls.Add(this.admin);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);

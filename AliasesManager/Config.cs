@@ -26,7 +26,7 @@ namespace AliasesManager
             public bool enabled;
             public string name;
             public bool load_profile;
-            public string modified_command;
+            public string command;
             public bool convert_args;
         }
         public List<WindowsAlias> windows_aliases = new List<WindowsAlias>();

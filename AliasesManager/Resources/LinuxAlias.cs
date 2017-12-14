@@ -6,25 +6,29 @@ namespace TestPipe
 {
     class Program
     {
-        const string change_command = [CHANGE_COMMAND];
+        const string command = [COMMAND];
         const bool load_profile = [LOAD_PROFILE];
         const bool convert_args = [CONVERT_ARGS];
         static void Main(string[] args)
         {
-            string cmd = change_command;
-            if (cmd == null)
-                cmd = "\"" + Path.GetFileNameWithoutExtension(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\"";
+            //Console.TreatControlCAsInput = true;
+            Console.CancelKeyPress += delegate (object sender, ConsoleCancelEventArgs e) {
+                e.Cancel = true;
+            };
+
             string args_str = Environment.CommandLine;
             args_str = args_str.Substring(nextArg(args_str));
             if (convert_args)
                 args_str = args_str.Replace("\\", "/");
-            args_str = cmd + " " + args_str;
+            if (command != null)
+                args_str = command + " " + args_str;
 
             Process p = new Process();
             p.StartInfo.FileName = "bash.exe";
             p.StartInfo.Arguments = "-c " + quoteParam(args_str);
             if (load_profile)
                 p.StartInfo.Arguments = "--login " + p.StartInfo.Arguments;
+            p.StartInfo.WorkingDirectory = Environment.CurrentDirectory;
             p.StartInfo.CreateNoWindow = false;
             p.StartInfo.UseShellExecute = false;
             /*p.StartInfo.RedirectStandardError = true;

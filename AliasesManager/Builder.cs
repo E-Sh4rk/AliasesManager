@@ -55,7 +55,7 @@ namespace AliasesManager
                 parameters.ReferencedAssemblies.Add("System.dll");
 
                 string code = Properties.Resources.LinuxAlias;
-                code = code.Replace("[CHANGE_COMMAND]", CodeOfStr(la.modified_command));
+                code = code.Replace("[COMMAND]", CodeOfStr(la.command));
                 code = code.Replace("[LOAD_PROFILE]", CodeOfBool(la.load_profile));
                 code = code.Replace("[CONVERT_ARGS]", CodeOfBool(la.convert_args));
 
@@ -99,8 +99,6 @@ namespace AliasesManager
                 parameters.ReferencedAssemblies.Add("System.dll");
 
                 string code = Properties.Resources.WindowsAlias;
-                if (wa.command == null || wa.args_pattern == null)
-                    throw new Exception();
                 code = code.Replace("[COMMAND]", CodeOfStr(wa.command));
                 code = code.Replace("[HIDDEN]", CodeOfBool(wa.hidden));
                 code = code.Replace("[CREATE_NO_WINDOW]", CodeOfBool(wa.create_no_window));
