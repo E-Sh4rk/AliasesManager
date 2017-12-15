@@ -44,7 +44,7 @@ namespace AliasesManager
             foreach (Config.WindowsAlias wa in cfg.windows_aliases)
             {
                 ListViewItem lvi = new ListViewItem(new string[] { wa.name, wa.command, wa.args_pattern, wa.working_dir,
-                    wa.hidden.ToString(), wa.create_no_window.ToString(), wa.open_console.ToString(), wa.admin.ToString() });
+                    wa.hidden.ToString(), wa.admin.ToString(), wa.open_console.ToString(), wa.target_open_console.ToString() });
                 lvi.Tag = wa.ID;
                 lvi.Checked = wa.enabled;
                 windowsListView.Items.Add(lvi);
@@ -294,8 +294,8 @@ namespace AliasesManager
                 wa.args_pattern = wac.Args;
                 wa.working_dir = wac.WorkingDir;
                 wa.hidden = wac.Hidden;
-                wa.create_no_window = wac.CreateNoWindow;
                 wa.open_console = wac.Console;
+                wa.target_open_console = wac.TargetConsole;
                 wa.admin = wac.Admin;
                 cfg.windows_aliases.Add(wa);
 
@@ -324,8 +324,8 @@ namespace AliasesManager
                 wa.args_pattern = wac.Args;
                 wa.working_dir = wac.WorkingDir;
                 wa.hidden = wac.Hidden;
-                wa.create_no_window = wac.CreateNoWindow;
                 wa.open_console = wac.Console;
+                wa.target_open_console = wac.TargetConsole;
                 wa.admin = wac.Admin;
 
                 // We must delete the alias involved, however it will not be updated

@@ -13,11 +13,11 @@ namespace AliasesManager
             public bool enabled;
             public string name;
             public bool hidden;
-            public bool create_no_window;
             public string command;
             public string args_pattern;
             public string working_dir;
             public bool open_console;
+            public bool target_open_console;
             public bool admin;
         }
         public class LinuxAlias

@@ -38,7 +38,6 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -54,6 +53,8 @@
             this.addAliasesLocation = new System.Windows.Forms.Button();
             this.pathVariable = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.resetData = new System.Windows.Forms.Button();
+            this.reconstructAliases = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.linuxCompleteContextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.newToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,8 +68,7 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.reconstructAliases = new System.Windows.Forms.Button();
-            this.resetData = new System.Windows.Forms.Button();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -113,9 +113,9 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
-            this.columnHeader6,
+            this.columnHeader8,
             this.columnHeader7,
-            this.columnHeader8});
+            this.columnHeader6});
             this.windowsListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.windowsListView.FullRowSelect = true;
             this.windowsListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -133,32 +133,27 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Alias";
-            this.columnHeader1.Width = 103;
+            this.columnHeader1.Width = 99;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Command";
-            this.columnHeader2.Width = 92;
+            this.columnHeader2.Width = 93;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Arguments";
-            this.columnHeader3.Width = 92;
+            this.columnHeader3.Width = 95;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Working dir";
-            this.columnHeader4.Width = 83;
+            this.columnHeader4.Width = 86;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Hidden";
-            this.columnHeader5.Width = 49;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "CNW";
-            this.columnHeader6.Width = 45;
+            this.columnHeader5.Text = "Target H";
+            this.columnHeader5.Width = 56;
             // 
             // columnHeader7
             // 
@@ -304,6 +299,28 @@
             this.tabPage4.Text = "About";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // resetData
+            // 
+            this.resetData.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.resetData.Location = new System.Drawing.Point(300, 220);
+            this.resetData.Name = "resetData";
+            this.resetData.Size = new System.Drawing.Size(126, 23);
+            this.resetData.TabIndex = 2;
+            this.resetData.Text = "Reset all data";
+            this.resetData.UseVisualStyleBackColor = true;
+            this.resetData.Click += new System.EventHandler(this.resetData_Click);
+            // 
+            // reconstructAliases
+            // 
+            this.reconstructAliases.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.reconstructAliases.Location = new System.Drawing.Point(156, 220);
+            this.reconstructAliases.Name = "reconstructAliases";
+            this.reconstructAliases.Size = new System.Drawing.Size(126, 23);
+            this.reconstructAliases.TabIndex = 1;
+            this.reconstructAliases.Text = "Reconstruct aliases";
+            this.reconstructAliases.UseVisualStyleBackColor = true;
+            this.reconstructAliases.Click += new System.EventHandler(this.reconstructAliases_Click);
+            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -312,7 +329,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(218, 39);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Aliases Manager 1.4\r\nCredits: Mickael Laurent\r\nhttps://github.com/E-Sh4rk/Aliases" +
+            this.label2.Text = "Aliases Manager 1.5\r\nCredits: Mickael Laurent\r\nhttps://github.com/E-Sh4rk/Aliases" +
     "Manager";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -404,27 +421,10 @@
             this.toolStripMenuItem4.Text = "Delete";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.deleteToolStripMenuItem2_Click);
             // 
-            // reconstructAliases
+            // columnHeader6
             // 
-            this.reconstructAliases.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.reconstructAliases.Location = new System.Drawing.Point(156, 220);
-            this.reconstructAliases.Name = "reconstructAliases";
-            this.reconstructAliases.Size = new System.Drawing.Size(126, 23);
-            this.reconstructAliases.TabIndex = 1;
-            this.reconstructAliases.Text = "Reconstruct aliases";
-            this.reconstructAliases.UseVisualStyleBackColor = true;
-            this.reconstructAliases.Click += new System.EventHandler(this.reconstructAliases_Click);
-            // 
-            // resetData
-            // 
-            this.resetData.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.resetData.Location = new System.Drawing.Point(300, 220);
-            this.resetData.Name = "resetData";
-            this.resetData.Size = new System.Drawing.Size(126, 23);
-            this.resetData.TabIndex = 2;
-            this.resetData.Text = "Reset all data";
-            this.resetData.UseVisualStyleBackColor = true;
-            this.resetData.Click += new System.EventHandler(this.resetData_Click);
+            this.columnHeader6.Text = "Target C";
+            this.columnHeader6.Width = 55;
             // 
             // Form1
             // 
@@ -477,7 +477,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ContextMenuStrip windowsContextStrip;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
@@ -491,6 +490,7 @@
         private System.Windows.Forms.ColumnHeader convert_args;
         private System.Windows.Forms.Button resetData;
         private System.Windows.Forms.Button reconstructAliases;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }
 

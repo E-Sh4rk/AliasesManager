@@ -1,6 +1,5 @@
 using System;
 using System.Diagnostics;
-//using System.IO;
 
 namespace TestPipe
 {
@@ -8,7 +7,7 @@ namespace TestPipe
     {
         const string command = [COMMAND];
         const bool hidden = [HIDDEN];
-        const bool create_no_window = [CREATE_NO_WINDOW];
+        const bool toc = [TARGET_OPEN_CONSOLE];
         const string args_pattern = [ARGS_PATTERN];
         const string working_dir = [WORKING_DIR];
         static void Main(string[] args)
@@ -27,7 +26,7 @@ namespace TestPipe
                 args_str = Environment.ExpandEnvironmentVariables(args_pattern.Replace("%ARGS%", args_str));
                 if (cmd == null)
                 {
-                    cmd = args_str.Substring(0, nextArg(args_str));
+                    cmd = args_str.Substring(0, endArg(args_str));
                     args_str = args_str.Substring(nextArg(args_str));
                 }
             }
@@ -42,8 +41,8 @@ namespace TestPipe
                 p.StartInfo.WorkingDirectory = Environment.ExpandEnvironmentVariables(working_dir.Replace("\"", ""));
             else
                 p.StartInfo.WorkingDirectory = Environment.CurrentDirectory;
-            p.StartInfo.CreateNoWindow = create_no_window;
-            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.CreateNoWindow = !toc && !hidden;
+            p.StartInfo.UseShellExecute = hidden;
             if (hidden)
                 p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             p.Start();
@@ -55,7 +54,7 @@ namespace TestPipe
             while (i < str.Length && str[i] == ' ') i++;
             return i;
         }
-        static int nextArg(string str)
+        static int endArg(string str)
         {
             int i = firstNonSpace(str);
             bool quote = false;
@@ -64,13 +63,15 @@ namespace TestPipe
                 if (str[i] == '"')
                     quote = !quote;
                 else if (str[i] == ' ' && !quote)
-                {
-                    i++;
                     break;
-                }
                 i++;
             }
             return i;
+        }
+        static int nextArg(string str)
+        {
+            int ea = endArg(str);
+            return firstNonSpace(str.Substring(ea)) + ea;
         }
     }
 }

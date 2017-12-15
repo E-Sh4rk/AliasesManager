@@ -24,8 +24,8 @@ namespace AliasesManager
                 name.Text = wa.name;
                 command.Text = wa.command == null ? "" : wa.command;
                 hidden.Checked = wa.hidden;
-                createNoWindow.Checked = wa.create_no_window;
                 console.Checked = wa.open_console;
+                targetConsole.Checked = wa.target_open_console;
                 admin.Checked = wa.admin;
                 args.Text = wa.args_pattern == null ? "" : wa.args_pattern;
                 workingDir.Text = wa.working_dir == null ? "" : wa.working_dir;
@@ -44,13 +44,13 @@ namespace AliasesManager
         {
             get { return hidden.Checked; }
         }
-        public bool CreateNoWindow
-        {
-            get { return createNoWindow.Checked; }
-        }
         public bool Console
         {
             get { return console.Checked; }
+        }
+        public bool TargetConsole
+        {
+            get { return targetConsole.Checked; }
         }
         public bool Admin
         {

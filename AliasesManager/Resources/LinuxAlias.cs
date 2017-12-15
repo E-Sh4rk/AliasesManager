@@ -1,6 +1,6 @@
 using System;
 using System.Diagnostics;
-using System.IO;
+//using System.IO;
 
 namespace TestPipe
 {
@@ -52,7 +52,7 @@ namespace TestPipe
             while (i < str.Length && str[i] == ' ') i++;
             return i;
         }
-        static int nextArg(string str)
+        static int endArg(string str)
         {
             int i = firstNonSpace(str);
             bool quote = false;
@@ -61,13 +61,15 @@ namespace TestPipe
                 if (str[i] == '"')
                     quote = !quote;
                 else if (str[i] == ' ' && !quote)
-                {
-                    i++;
                     break;
-                }
                 i++;
             }
             return i;
+        }
+        static int nextArg(string str)
+        {
+            int ea = endArg(str);
+            return firstNonSpace(str.Substring(ea))+ea;
         }
     }
 }
