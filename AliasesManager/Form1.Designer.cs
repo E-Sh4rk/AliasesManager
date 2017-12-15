@@ -38,8 +38,9 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.linuxListView = new System.Windows.Forms.ListView();
             this.alias = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -68,7 +69,7 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -112,10 +113,11 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
+            this.columnHeader9,
             this.columnHeader5,
-            this.columnHeader8,
             this.columnHeader7,
-            this.columnHeader6});
+            this.columnHeader6,
+            this.columnHeader8});
             this.windowsListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.windowsListView.FullRowSelect = true;
             this.windowsListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -133,37 +135,42 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Alias";
-            this.columnHeader1.Width = 99;
+            this.columnHeader1.Width = 88;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Command";
-            this.columnHeader2.Width = 93;
+            this.columnHeader2.Width = 95;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Arguments";
-            this.columnHeader3.Width = 95;
+            this.columnHeader3.Width = 94;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Working dir";
-            this.columnHeader4.Width = 86;
+            this.columnHeader4.Width = 80;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Target H";
-            this.columnHeader5.Width = 56;
+            this.columnHeader5.Text = "TH";
+            this.columnHeader5.Width = 40;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Admin";
+            this.columnHeader8.Width = 44;
             // 
             // columnHeader7
             // 
             this.columnHeader7.Text = "Console";
             this.columnHeader7.Width = 52;
             // 
-            // columnHeader8
+            // columnHeader6
             // 
-            this.columnHeader8.Text = "Admin";
-            this.columnHeader8.Width = 43;
+            this.columnHeader6.Text = "TC";
+            this.columnHeader6.Width = 38;
             // 
             // tabPage2
             // 
@@ -329,8 +336,8 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(218, 39);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Aliases Manager 1.5\r\nCredits: Mickael Laurent\r\nhttps://github.com/E-Sh4rk/Aliases" +
-    "Manager";
+            this.label2.Text = "Aliases Manager 1.5.1\r\nCredits: Mickael Laurent\r\nhttps://github.com/E-Sh4rk/Alias" +
+    "esManager";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // linuxCompleteContextStrip
@@ -421,10 +428,10 @@
             this.toolStripMenuItem4.Text = "Delete";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.deleteToolStripMenuItem2_Click);
             // 
-            // columnHeader6
+            // columnHeader9
             // 
-            this.columnHeader6.Text = "Target C";
-            this.columnHeader6.Width = 55;
+            this.columnHeader9.Text = "Hidden";
+            this.columnHeader9.Width = 47;
             // 
             // Form1
             // 
@@ -491,6 +498,7 @@
         private System.Windows.Forms.Button resetData;
         private System.Windows.Forms.Button reconstructAliases;
         private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
     }
 }
 

@@ -13,6 +13,7 @@ namespace AliasesManager
             public bool enabled;
             public string name;
             public bool hidden;
+            public bool target_hidden;
             public string command;
             public string args_pattern;
             public string working_dir;

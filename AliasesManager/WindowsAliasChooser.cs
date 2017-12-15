@@ -23,6 +23,7 @@ namespace AliasesManager
             {
                 name.Text = wa.name;
                 command.Text = wa.command == null ? "" : wa.command;
+                targetHidden.Checked = wa.target_hidden;
                 hidden.Checked = wa.hidden;
                 console.Checked = wa.open_console;
                 targetConsole.Checked = wa.target_open_console;
@@ -43,6 +44,10 @@ namespace AliasesManager
         public bool Hidden
         {
             get { return hidden.Checked; }
+        }
+        public bool TargetHidden
+        {
+            get { return targetHidden.Checked; }
         }
         public bool Console
         {

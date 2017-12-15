@@ -101,6 +101,7 @@ namespace AliasesManager
                 string code = Properties.Resources.WindowsAlias;
                 code = code.Replace("[COMMAND]", CodeOfStr(wa.command));
                 code = code.Replace("[HIDDEN]", CodeOfBool(wa.hidden));
+                code = code.Replace("[TARGET_HIDDEN]", CodeOfBool(wa.target_hidden));
                 code = code.Replace("[TARGET_OPEN_CONSOLE]", CodeOfBool(wa.target_open_console));
                 code = code.Replace("[ARGS_PATTERN]", CodeOfStr(wa.args_pattern));
                 code = code.Replace("[WORKING_DIR]", CodeOfStr(wa.working_dir));
