@@ -37,10 +37,11 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.linuxListView = new System.Windows.Forms.ListView();
             this.alias = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -69,7 +70,6 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -152,15 +152,15 @@
             this.columnHeader4.Text = "Working dir";
             this.columnHeader4.Width = 80;
             // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Hidden";
+            this.columnHeader9.Width = 47;
+            // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "TH";
             this.columnHeader5.Width = 40;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Admin";
-            this.columnHeader8.Width = 44;
             // 
             // columnHeader7
             // 
@@ -171,6 +171,11 @@
             // 
             this.columnHeader6.Text = "TC";
             this.columnHeader6.Width = 38;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Admin";
+            this.columnHeader8.Width = 44;
             // 
             // tabPage2
             // 
@@ -336,7 +341,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(218, 39);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Aliases Manager 1.5.1\r\nCredits: Mickael Laurent\r\nhttps://github.com/E-Sh4rk/Alias" +
+            this.label2.Text = "Aliases Manager 1.5.2\r\nCredits: Mickael Laurent\r\nhttps://github.com/E-Sh4rk/Alias" +
     "esManager";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -427,11 +432,6 @@
             this.toolStripMenuItem4.Size = new System.Drawing.Size(107, 22);
             this.toolStripMenuItem4.Text = "Delete";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.deleteToolStripMenuItem2_Click);
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Hidden";
-            this.columnHeader9.Width = 47;
             // 
             // Form1
             // 

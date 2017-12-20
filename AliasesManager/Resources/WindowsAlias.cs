@@ -39,7 +39,7 @@ namespace TestPipe
             {
                 args_str = Environment.CommandLine;
                 args_str = args_str.Substring(nextArg(args_str));
-                args_str = Environment.ExpandEnvironmentVariables(args_pattern.Replace("%ARGS%", args_str));
+                args_str = args_pattern.Replace("%ARGS%", args_str);
                 if (cmd == null)
                 {
                     cmd = args_str.Substring(0, endArg(args_str));
@@ -52,7 +52,7 @@ namespace TestPipe
                 p.StartInfo.FileName = Environment.ExpandEnvironmentVariables(cmd.Replace("\"", ""));
             else
                 return;
-            p.StartInfo.Arguments = args_str;
+            p.StartInfo.Arguments = Environment.ExpandEnvironmentVariables(args_str);
             if (working_dir != null)
                 p.StartInfo.WorkingDirectory = Environment.ExpandEnvironmentVariables(working_dir.Replace("\"", ""));
             else
