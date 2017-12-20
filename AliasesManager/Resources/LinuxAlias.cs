@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 //using System.IO;
 
 namespace TestPipe
@@ -42,16 +43,14 @@ namespace TestPipe
             error.BaseStream.CopyToAsync(consoleError);*/
             p.WaitForExit();
         }
+        static string matchEvaluator(Match m)
+        {
+            return m.Value.Substring(0,m.Length-2) + "/mnt/" + m.Value.Substring(m.Length - 2, 1).ToLowerInvariant();
+        }
         static string convertArgs(string args)
         {
             args = args.Replace("\\", "/");
-
-            for (char c = 'a'; c <= 'z'; c++)
-            {
-                args = args.Replace(c.ToString() + ":", "/mnt/" + c.ToString());
-                args = args.Replace(c.ToString().ToUpperInvariant() + ":", "/mnt/" + c.ToString());
-            }
-
+            args = Regex.Replace(args, "([^0-9a-zA-Z][a-zA-Z]"+Regex.Escape(":")+")", new MatchEvaluator(matchEvaluator));
             return args;
         }
         static string quoteParam(string param)
