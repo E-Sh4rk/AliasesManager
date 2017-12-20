@@ -19,7 +19,7 @@ namespace TestPipe
             string args_str = Environment.CommandLine;
             args_str = args_str.Substring(nextArg(args_str));
             if (convert_args)
-                args_str = args_str.Replace("\\", "/");
+                args_str = convertArgs(args_str);
             if (command != null)
                 args_str = command + " " + args_str;
 
@@ -41,6 +41,18 @@ namespace TestPipe
             output.BaseStream.CopyToAsync(consoleOutput);
             error.BaseStream.CopyToAsync(consoleError);*/
             p.WaitForExit();
+        }
+        static string convertArgs(string args)
+        {
+            args = args.Replace("\\", "/");
+
+            for (char c = 'a'; c <= 'z'; c++)
+            {
+                args = args.Replace(c.ToString() + ":", "/mnt/" + c.ToString());
+                args = args.Replace(c.ToString().ToUpperInvariant() + ":", "/mnt/" + c.ToString());
+            }
+
+            return args;
         }
         static string quoteParam(string param)
         {

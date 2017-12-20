@@ -1,7 +1,7 @@
-# AliasesManager
+# Aliases Manager
 
 Create and manage custom aliases for Windows.  
-Many features are available in order to custmize your Windows and gain in productivity.
+Many features are available in order to customize your Windows and gain in productivity.
 
 ## Dependencies
 
