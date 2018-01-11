@@ -51,6 +51,7 @@ namespace TestPipe
         {
             args = args.Replace("\\", "/");
             args = Regex.Replace(args, "([^0-9a-zA-Z][a-zA-Z]"+Regex.Escape(":")+")", new MatchEvaluator(matchEvaluator));
+            args = Regex.Replace(args, "^([a-zA-Z]" + Regex.Escape(":") + ")", new MatchEvaluator(matchEvaluator));
             return args;
         }
         static string quoteParam(string param)
