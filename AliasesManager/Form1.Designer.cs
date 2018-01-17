@@ -341,8 +341,8 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(218, 39);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Aliases Manager 1.5.4\r\nCredits: Mickael Laurent\r\nhttps://github.com/E-Sh4rk/Alias" +
-    "esManager";
+            this.label2.Text = "Aliases Manager 1.6\r\nCredits: Mickael Laurent\r\nhttps://github.com/E-Sh4rk/Aliases" +
+    "Manager";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // linuxCompleteContextStrip

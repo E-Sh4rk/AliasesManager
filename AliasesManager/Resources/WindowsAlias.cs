@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 
 namespace TestPipe
 {
@@ -33,6 +34,7 @@ namespace TestPipe
                     ShowWindow(handle, SW_HIDE);
             }
 
+            evaluator_args = args;
             string cmd = command;
             string args_str = "";
             if (args_pattern != null)
@@ -40,6 +42,7 @@ namespace TestPipe
                 args_str = Environment.CommandLine;
                 args_str = args_str.Substring(nextArg(args_str));
                 args_str = args_pattern.Replace("%ARGS%", args_str);
+                args_str = Regex.Replace(args_str, "(" + Regex.Escape("%") + "ARG[0-9]+" + Regex.Escape("%") + ")", new MatchEvaluator(matchEvaluator));
                 if (cmd == null)
                 {
                     cmd = args_str.Substring(0, endArg(args_str));
@@ -63,6 +66,18 @@ namespace TestPipe
                 p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             p.Start();
             p.WaitForExit();
+        }
+        static string[] evaluator_args;
+        static string matchEvaluator(Match m)
+        {
+            try
+            {
+                int nb = Convert.ToInt32(m.Value.Substring(4, m.Length - 5));
+                if (nb > 0 && evaluator_args.Length >= nb)
+                    return evaluator_args[nb-1];
+            }
+            catch { }
+            return "";
         }
         static int firstNonSpace(string str)
         {
