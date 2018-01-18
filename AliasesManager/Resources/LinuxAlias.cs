@@ -10,7 +10,7 @@ namespace TestPipe
         const string command = [COMMAND];
         const bool load_profile = [LOAD_PROFILE];
         const bool convert_args = [CONVERT_ARGS];
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
             //Console.TreatControlCAsInput = true;
             Console.CancelKeyPress += delegate (object sender, ConsoleCancelEventArgs e) {
@@ -42,6 +42,7 @@ namespace TestPipe
             output.BaseStream.CopyToAsync(consoleOutput);
             error.BaseStream.CopyToAsync(consoleError);*/
             p.WaitForExit();
+            return p.ExitCode;
         }
         static string matchEvaluator(Match m)
         {

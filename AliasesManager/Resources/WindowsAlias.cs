@@ -20,7 +20,7 @@ namespace TestPipe
         const bool toc = [TARGET_OPEN_CONSOLE];
         const string args_pattern = [ARGS_PATTERN];
         const string working_dir = [WORKING_DIR];
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
             //Console.TreatControlCAsInput = true;
             Console.CancelKeyPress += delegate (object sender, ConsoleCancelEventArgs e) {
@@ -54,7 +54,7 @@ namespace TestPipe
             if (cmd != null)
                 p.StartInfo.FileName = Environment.ExpandEnvironmentVariables(cmd.Replace("\"", ""));
             else
-                return;
+                return 0;
             p.StartInfo.Arguments = Environment.ExpandEnvironmentVariables(args_str);
             if (working_dir != null)
                 p.StartInfo.WorkingDirectory = Environment.ExpandEnvironmentVariables(working_dir.Replace("\"", ""));
@@ -66,17 +66,14 @@ namespace TestPipe
                 p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             p.Start();
             p.WaitForExit();
+            return p.ExitCode;
         }
         static string[] evaluator_args;
         static string matchEvaluator(Match m)
         {
-            try
-            {
-                int nb = Convert.ToInt32(m.Value.Substring(4, m.Length - 5));
-                if (nb > 0 && evaluator_args.Length >= nb)
-                    return evaluator_args[nb-1];
-            }
-            catch { }
+            int nb = Convert.ToInt32(m.Value.Substring(4, m.Length - 5));
+            if (nb > 0 && evaluator_args.Length >= nb)
+                return evaluator_args[nb-1];
             return "";
         }
         static int firstNonSpace(string str)
