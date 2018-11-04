@@ -1,7 +1,7 @@
 using System;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
-using System.Threading;
+using System.Threading.Tasks;
 using System.IO;
 
 namespace TestPipe
@@ -40,24 +40,22 @@ namespace TestPipe
             p.StartInfo.RedirectStandardInput = true;
 
             p.Start();
-            Stream consoleError = Console.OpenStandardError();
-            Stream consoleOutput = Console.OpenStandardOutput();
-            Stream consoleInput = Console.OpenStandardInput();
+            StreamWriter consoleError = new StreamWriter(Console.OpenStandardError());
+            StreamWriter consoleOutput = new StreamWriter(Console.OpenStandardOutput());
+            StreamReader consoleInput = new StreamReader(Console.OpenStandardInput());
             StreamReader output = p.StandardOutput;
             StreamReader error = p.StandardError;
             StreamWriter input = p.StandardInput;
 
-            Thread t1 = new Thread(new ParameterizedThreadStart(forward));
-            t1.Start(new object[] { output, new StreamWriter(consoleOutput), true });
-            Thread t2 = new Thread(new ParameterizedThreadStart(forward));
-            t2.Start(new object[] { error, new StreamWriter(consoleError), true });
-            Thread t3 = new Thread(new ParameterizedThreadStart(forward));
-            t3.Start(new object[] { new StreamReader(consoleInput), input, false });
+            Task t1 = forward(output, consoleOutput, true);
+            Task t2 = forward(error, consoleError, true);
+            Task t3 = forward(consoleInput, input, false);
 
             p.WaitForExit();
-            try { t1.Abort(); } catch { }
-            try { t2.Abort(); } catch { }
-            try { t3.Abort(); } catch { }
+            try { consoleInput.Close(); } catch { }
+            t1.Wait();
+            t2.Wait();
+            //t3.Wait();
 
             return p.ExitCode;
         }
@@ -105,27 +103,17 @@ namespace TestPipe
         }
 
         // ----- FORWARDING -----
-        static void forward(/*StreamReader from, StreamWriter to, bool conv_direction*/object args)
+        static async Task forward(StreamReader from, StreamWriter to, bool conv_direction)
         {
-            object[] args_array = (object[])args;
-            StreamReader from = (StreamReader)(args_array[0]);
-            StreamWriter to = (StreamWriter)(args_array[1]);
-            bool conv = (bool)(args_array[2]);
-            while (!from.EndOfStream)
+            while (true)
             {
                 try
                 {
-                    string str = from.ReadLine();
-                    if (str != null)
-                    {
-                        if (conv)
-                            str = convert_output ? convertLinWin(str) : str;
-                        else
-                            str = convert_input ? convertWinLin(str) : str;
-                        to.WriteLine(str); to.Flush();
-                    }
-                    else
+                    string str = await from.ReadLineAsync();
+                    if (str == null)
                         break;
+                    str = conv_direction ? convertLinWin(str) : convertWinLin(str);
+                    to.WriteLine(str); to.Flush();
                 }
                 catch { break; }
             }
