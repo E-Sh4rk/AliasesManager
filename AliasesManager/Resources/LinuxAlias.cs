@@ -38,7 +38,9 @@ namespace TestPipe
         }
 
         // ----- PATHS CONVERSION -----
-        static string filename_regex = "(?:[^" + Regex.Escape("/\\:*?\"<>|") + "]*[a-zA-Z0-9" + Regex.Escape("-_.") + "])";
+        static string filename_first_last_char = "[^" + Regex.Escape("/\\:*?\"<>|='") + "\\s]";
+        static string filename_middle_char = "[^" + Regex.Escape("/\\:*?\"<>|") + "]";
+        static string filename_regex = "(?:(?:" + filename_first_last_char + filename_middle_char + "*" + filename_first_last_char + ")|" + filename_first_last_char + ")";
         static string filename_separator_regex = "[" + Regex.Escape("/\\") + "]";
         static string path_separator_regex = "[" + Regex.Escape("='\":") + "\\s" + "]";
         static string valid_rel_path_regex = "(?:(?:" + filename_regex + filename_separator_regex + "?)+)";
