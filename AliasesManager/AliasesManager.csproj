@@ -62,6 +62,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\LinuxAliasAlt.cs" />
     <Compile Include="WindowsAliasChooser.cs">
       <SubType>Form</SubType>
     </Compile>

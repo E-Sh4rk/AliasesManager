@@ -52,7 +52,7 @@ namespace AliasesManager
 
             foreach (Config.LinuxAlias la in cfg.linux_aliases)
             {
-                ListViewItem lvi = new ListViewItem(new string[] { la.name, la.command, la.load_profile.ToString(), la.convert_args.ToString() });
+                ListViewItem lvi = new ListViewItem(new string[] { la.name, la.command, la.load_profile.ToString(), la.convert_args.ToString(), la.convert_input.ToString(), la.convert_output.ToString() });
                 lvi.Tag = la.ID;
                 lvi.Checked = la.enabled;
                 linuxListView.Items.Add(lvi);
@@ -191,6 +191,8 @@ namespace AliasesManager
                 la.command = lac.Command;
                 la.load_profile = lac.LoadProfile;
                 la.convert_args = lac.ConvertArgs;
+                la.convert_input = lac.ConvertInput;
+                la.convert_output = lac.ConvertOutput;
                 cfg.linux_aliases.Add(la);
 
                 _saveConfig();
@@ -217,6 +219,8 @@ namespace AliasesManager
                 la.command = lac.Command;
                 la.load_profile = lac.LoadProfile;
                 la.convert_args = lac.ConvertArgs;
+                la.convert_input = lac.ConvertInput;
+                la.convert_output = lac.ConvertOutput;
 
                 // We must delete the alias involved, however it will not be updated
                 filename = Path.Combine(aliases_location, _normalizeAliasName(la.name));

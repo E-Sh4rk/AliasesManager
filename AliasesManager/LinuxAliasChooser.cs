@@ -25,6 +25,8 @@ namespace AliasesManager
                 command.Text = la.command == null ? "" : la.command;
                 loadProfile.Checked = la.load_profile;
                 convertArgs.Checked = la.convert_args;
+                convertInput.Checked = la.convert_input;
+                convertOutput.Checked = la.convert_output;
             }
         }
 
@@ -43,6 +45,14 @@ namespace AliasesManager
         public bool ConvertArgs
         {
             get { return convertArgs.Checked; }
+        }
+        public bool ConvertInput
+        {
+            get { return convertInput.Checked; }
+        }
+        public bool ConvertOutput
+        {
+            get { return convertOutput.Checked; }
         }
 
         private void ok_Click(object sender, EventArgs e)

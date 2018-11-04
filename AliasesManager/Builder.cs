@@ -55,9 +55,14 @@ namespace AliasesManager
                 parameters.ReferencedAssemblies.Add("System.dll");
 
                 string code = Properties.Resources.LinuxAlias;
+                if (la.convert_input || la.convert_output)
+                    code = Properties.Resources.LinuxAliasAlt;
+    
                 code = code.Replace("[COMMAND]", CodeOfStr(la.command));
                 code = code.Replace("[LOAD_PROFILE]", CodeOfBool(la.load_profile));
                 code = code.Replace("[CONVERT_ARGS]", CodeOfBool(la.convert_args));
+                code = code.Replace("[CONVERT_INPUT]", CodeOfBool(la.convert_input));
+                code = code.Replace("[CONVERT_OUTPUT]", CodeOfBool(la.convert_output));
 
                 CSharpCodeProvider provider = new CSharpCodeProvider(new Dictionary<string, string> { { "CompilerVersion", "v4.0" } });
                 CompilerResults compiler = provider.CompileAssemblyFromSource(parameters, code);

@@ -101,20 +101,21 @@ namespace AliasesManager.Properties {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à using System;
         ///using System.Diagnostics;
-        ///using System.IO;
+        ///using System.Text.RegularExpressions;
         ///
         ///namespace TestPipe
         ///{
         ///    class Program
         ///    {
-        ///        const string change_command = [CHANGE_COMMAND];
+        ///        const string command = [COMMAND];
         ///        const bool load_profile = [LOAD_PROFILE];
-        ///        static void Main(string[] args)
+        ///        const bool convert_args = [CONVERT_ARGS];
+        ///        static int Main(string[] args)
         ///        {
-        ///            string args_str = Environment.CommandLine;
-        ///            string cmd = change_command;
-        ///            if (cmd == null)
-        ///                cmd = &quot;\&quot;&quot; + Path.GetFileNameWithoutExtension(System.Reflection.Assembly.GetExecutingAssembly().L [le reste de la chaîne a été tronqué]&quot;;.
+        ///            //Console.TreatControlCAsInput = true;
+        ///            Console.CancelKeyPress += delegate (object sender, ConsoleCancelEventArgs e) {
+        ///                e.Cancel = true;
+        ///       [le reste de la chaîne a été tronqué]&quot;;.
         /// </summary>
         internal static string LinuxAlias {
             get {
@@ -125,21 +126,49 @@ namespace AliasesManager.Properties {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à using System;
         ///using System.Diagnostics;
-        /////using System.IO;
+        ///using System.Text.RegularExpressions;
+        ///using System.Threading;
+        ///using System.IO;
         ///
         ///namespace TestPipe
         ///{
         ///    class Program
         ///    {
         ///        const string command = [COMMAND];
-        ///        const bool hidden = [HIDDEN];
-        ///        const bool create_no_window = [CREATE_NO_WINDOW];
-        ///        const string args_pattern = [ARGS_PATTERN];
-        ///        const string working_dir = [WORKING_DIR];
-        ///        static void Main(string[] args)
+        ///        const bool load_profile = [LOAD_PROFILE];
+        ///        const bool convert_args = [CONVERT_ARGS];
+        ///        const bool convert_input = [CONVERT_INPUT];
+        ///        const bool convert_output = [CONVERT_OUTPUT];
+        ///        static int Main(string[] args)
         ///        {
-        ///            string args_str = Environment.CommandLine;
-        ///            args_str = args_str.Substring(next [le reste de la chaîne a été tronqué]&quot;;.
+        ///            //Console.TreatContro [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string LinuxAliasAlt {
+            get {
+                return ResourceManager.GetString("LinuxAliasAlt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à using System;
+        ///using System.Diagnostics;
+        ///using System.Runtime.InteropServices;
+        ///using System.Text.RegularExpressions;
+        ///
+        ///namespace TestPipe
+        ///{
+        ///    class Program
+        ///    {
+        ///        [DllImport(&quot;kernel32.dll&quot;)]
+        ///        static extern IntPtr GetConsoleWindow();
+        ///        [DllImport(&quot;user32.dll&quot;)]
+        ///        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+        ///        const int SW_HIDE = 0;
+        ///        const int SW_SHOW = 5;
+        ///
+        ///        const string command = [COMMAND];
+        ///        const bool hidden = [HIDDEN];
+        ///     [le reste de la chaîne a été tronqué]&quot;;.
         /// </summary>
         internal static string WindowsAlias {
             get {

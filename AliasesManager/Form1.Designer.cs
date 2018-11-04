@@ -70,6 +70,8 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.convert_input = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.convert_output = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -195,7 +197,9 @@
             this.alias,
             this.command,
             this.profile,
-            this.convert_args});
+            this.convert_args,
+            this.convert_input,
+            this.convert_output});
             this.linuxListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.linuxListView.FullRowSelect = true;
             this.linuxListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
@@ -213,12 +217,12 @@
             // alias
             // 
             this.alias.Text = "Alias";
-            this.alias.Width = 181;
+            this.alias.Width = 96;
             // 
             // command
             // 
             this.command.Text = "Command";
-            this.command.Width = 197;
+            this.command.Width = 173;
             // 
             // profile
             // 
@@ -433,6 +437,16 @@
             this.toolStripMenuItem4.Text = "Delete";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.deleteToolStripMenuItem2_Click);
             // 
+            // convert_input
+            // 
+            this.convert_input.Text = "Convert input";
+            this.convert_input.Width = 76;
+            // 
+            // convert_output
+            // 
+            this.convert_output.Text = "Convert output";
+            this.convert_output.Width = 87;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -499,6 +513,8 @@
         private System.Windows.Forms.Button reconstructAliases;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader convert_input;
+        private System.Windows.Forms.ColumnHeader convert_output;
     }
 }
 
