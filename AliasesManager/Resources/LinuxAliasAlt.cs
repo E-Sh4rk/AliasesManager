@@ -114,7 +114,10 @@ namespace TestPipe
                     string str = await from.ReadLineAsync();
                     if (str == null)
                         break;
-                    str = conv_direction ? convertLinWin(str) : convertWinLin(str);
+                    if (conv_direction)
+                        str = convert_output ? convertLinWin(str) : str;
+                    else
+                        str = convert_input ? convertWinLin(str) : str;
                     to.WriteLine(str); to.Flush();
                 }
                 catch { break; }

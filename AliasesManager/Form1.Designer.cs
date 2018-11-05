@@ -48,6 +48,8 @@
             this.command = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.profile = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.convert_args = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.convert_input = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.convert_output = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.reloadPath = new System.Windows.Forms.Button();
@@ -70,8 +72,6 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.convert_input = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.convert_output = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -234,6 +234,16 @@
             this.convert_args.Text = "Convert args";
             this.convert_args.Width = 73;
             // 
+            // convert_input
+            // 
+            this.convert_input.Text = "Convert input";
+            this.convert_input.Width = 76;
+            // 
+            // convert_output
+            // 
+            this.convert_output.Text = "Convert output";
+            this.convert_output.Width = 87;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.label1);
@@ -345,8 +355,8 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(218, 39);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Aliases Manager 1.6.1\r\nCredits: Mickael Laurent\r\nhttps://github.com/E-Sh4rk/Alias" +
-    "esManager";
+            this.label2.Text = "Aliases Manager 2.0\r\nCredits: Mickael Laurent\r\nhttps://github.com/E-Sh4rk/Aliases" +
+    "Manager";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // linuxCompleteContextStrip
@@ -436,16 +446,6 @@
             this.toolStripMenuItem4.Size = new System.Drawing.Size(107, 22);
             this.toolStripMenuItem4.Text = "Delete";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.deleteToolStripMenuItem2_Click);
-            // 
-            // convert_input
-            // 
-            this.convert_input.Text = "Convert input";
-            this.convert_input.Width = 76;
-            // 
-            // convert_output
-            // 
-            this.convert_output.Text = "Convert output";
-            this.convert_output.Width = 87;
             // 
             // Form1
             // 
